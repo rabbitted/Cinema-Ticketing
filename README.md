@@ -1,22 +1,22 @@
-# 🎬 Cinema Ticketing System
+#  Cinema Ticketing System
 
 A desktop application for booking movie tickets. Built with JavaFX.
 
-## ✨ Features
+##  Features
 - Browse currently playing movies
 - Select seats from an interactive grid
 - Calculate total price automatically
 - Generate and print receipt
 
-## 🛠️ Built With
+##  Built With
 - Java 17
 - JavaFX
 - Scene Builder
 
-## 🚀 How to Run
+##  How to Run
 1. Clone this repository
 2. Open in IntelliJ or Eclipse
 3. Run `Main.java`
 
-## 📌 Status
+##  Status
 ✅ Completed project

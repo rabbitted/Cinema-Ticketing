@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+   <children>
+
+            <!-- BACKGROUND -->
+      <ImageView fitHeight="736.0" fitWidth="1308.0" layoutX="-6.0" layoutY="-6.0">
+         <image>
+            <Image url="@../../../../../Downloads/1ted.jpg" />
+         </image>
+      </ImageView>
+
+      <!-- MAIN PANEL -->
+      <AnchorPane layoutX="442.0" layoutY="226.0" prefHeight="277.0" prefWidth="417.0" style="-fx-background-color: rgba(85,85,85,0.8); -fx-border-color: #0277bd; -fx-border-width: 2; -fx-background-radius: 15; -fx-border-radius: 10;">
+         <children>
+
+            <!-- USERNAME FIELD -->
+            <StackPane layoutX="107.0" layoutY="76.0">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../../../../../Downloads/circle-user%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="usernameField" prefHeight="28.0" prefWidth="221.0" promptText="USERNAME" style="-fx-background-color: transparent; -fx-border-color: #9fa8da; -fx-border-radius: 15;">
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding></TextField>
+               </children>
+            </StackPane>
+
+            <!-- PASSWORD FIELD + EYE ICON -->
+            <StackPane layoutX="105.0" layoutY="112.0">
+               <children>
+                  <PasswordField fx:id="passwordField" prefHeight="28.0" prefWidth="221.0" promptText="PASSWORD" style="-fx-background-color: transparent; -fx-border-color: #9fa8da; -fx-border-radius: 15;">
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding></PasswordField>
+                  <TextField fx:id="passwordVisibleField" managed="false" prefHeight="28.0" prefWidth="221.0" promptText="PASSWORD" style="-fx-background-color: transparent; -fx-border-color: #9fa8da; -fx-border-radius: 15;" visible="false">
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding></TextField>
+                  <!-- EYE ICON -->
+                  <ImageView fx:id="eyeIcon" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#togglePasswordVisibility" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../../../../../Downloads/eye-disabled_icon-icons.com_50399.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../../../../../Downloads/lock%20(1).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+
+            <!-- LOGIN BUTTON -->
+            <Button fx:id="loginButton" layoutX="108.0" layoutY="169.0" onAction="#handleLogin" prefHeight="28.0" prefWidth="221.0" style="-fx-background-color: #40c4ff; -fx-background-radius: 15;" text="Login">
+               <font>
+                  <Font name="Tahoma" size="15.0" />
+               </font>
+            </Button>
+
+            <!-- FORGOT PASSWORD -->
+            <Label fx:id="forgotPasswordLabel" layoutX="118.0" layoutY="146.0" onMouseClicked="#handleForgotPassword" style="-fx-cursor: hand;" text="Forgot Password?" textFill="#e0d9d9">
+               <font>
+                  <Font name="Tahoma Bold" size="10.0" />
+               </font>
+            </Label>
+
+            <!-- REGISTER NOW -->
+            <TextFlow layoutX="109.0" layoutY="215.0" prefHeight="30.0" prefWidth="216.0">
+               <children>
+                  <Text fill="#e0d9d9" text="Don't have an account?">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </Text>
+                  <Hyperlink fx:id="registerNowLink" onAction="#handleRegister" style="-fx-font-size: 14; -fx-text-fill: #0682e6;" text="Register now" textFill="#0682e6">
+                     <font>
+                        <Font name="Tahoma Bold" size="12.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </TextFlow>
+
+            <!-- BACK BUTTON WITH IMAGE -->
+            <StackPane layoutX="12.0" layoutY="6.0">
+               <children>
+                  <Button fx:id="backButton" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="40" prefWidth="40" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                     <graphic>
+                        <ImageView fx:id="backButtonIcon" fitHeight="30" fitWidth="30" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/left-arrows.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </StackPane>
+
+         </children>
+      </AnchorPane>
+      <Label layoutX="509.0" layoutY="188.0" prefHeight="38.0" prefWidth="281.0" text="ELIANA CINEMA" textFill="WHITE">
+         <font>
+            <Font name="Tahoma Bold" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="760.0" layoutY="189.0">
+         <image>
+            <Image url="@../../../../../Downloads/play.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="0.71" />
+         </effect>
+      </ImageView>
+
+   </children>
+</AnchorPane>

@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UserDashboardController">
+   <children>
+      <BorderPane layoutX="163.0" layoutY="96.0" prefHeight="720.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="51.0" prefWidth="1300.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="39.0" prefWidth="1300.0">
+                     <children>
+                        <Button fx:id="closeBtn" layoutX="1239.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="55.0" style="-fx-background-color: TRANSPARENT;">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="CLOSE" size="1.2em">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </FontAwesomeIcon>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="minimizeBtn" layoutX="1171.0" layoutY="2.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="36.0" style="-fx-background-color: TRANSPARENT;">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="MINUS" size="1.2em">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </FontAwesomeIcon>
+                           </graphic>
+                        </Button>
+                        <Separator layoutX="198.0" layoutY="18.0" prefHeight="24.0" prefWidth="1102.0" />
+                        <Button fx:id="maximizeBtn" layoutX="1207.0" layoutY="2.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="36.0" style="-fx-background-color: TRANSPARENT;">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="SQUARE" size="1.2em">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </FontAwesomeIcon>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="19.0" layoutY="5.0" prefHeight="38.0" prefWidth="170.0" text="ELIANA CINEMA" textFill="#723a3a">
+                     <font>
+                        <Font name="Tahoma Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="761.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to top right, #1e242e, #ae2d3c);" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="60.0" layoutY="136.0" text="WELCOME" textFill="WHITE">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="usernameLabel" alignment="CENTER" layoutX="74.0" layoutY="156.0" text="Customer" textFill="WHITE" />
+                  <Button fx:id="homeBtn" alignment="CENTER" layoutX="2.0" layoutY="195.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Home">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="moviesBtn" alignment="CENTER" layoutX="2.0" layoutY="235.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Movies">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PLAY" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="snacksDrinksBtn" alignment="CENTER" layoutX="2.0" layoutY="272.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Snacks &amp; Drinks">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="COFFEE" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bookTicketsBtn" alignment="CENTER" layoutX="1.0" layoutY="310.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Book Tickets">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="TICKET" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="myBookingsBtn" alignment="CENTER" layoutX="3.0" layoutY="348.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="My Bookings">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="BOOK" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="aboutUsBtn" alignment="CENTER" layoutX="3.0" layoutY="386.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="About Us">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="INFO_CIRCLE" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="helpBtn" alignment="CENTER" layoutX="3.0" layoutY="424.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Help &amp; Support">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="QUESTION_CIRCLE" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="profileBtn" alignment="CENTER" layoutX="3.0" layoutY="462.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="My Profile">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  
+                  <!-- Cart Icon with Badge -->
+                  <VBox alignment="CENTER" layoutX="50.0" layoutY="520.0" spacing="5">
+                     <Button fx:id="cartBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent;">
+                        <graphic>
+                           <StackPane>
+                              <FontAwesomeIcon fill="WHITE" glyphName="SHOPPING_CART" size="3em" />
+                              <Circle fx:id="cartBadge" fill="#ffc107" radius="10.0" stroke="WHITE" strokeWidth="2.0" translateX="15.0" translateY="-15.0" visible="false">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Circle>
+                           </StackPane>
+                        </graphic>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                     </Button>
+                     <Label fx:id="cartTotalLabel" style="-fx-font-size: 12px;" text="ETB 0.00" textFill="WHITE" />
+                  </VBox>
+                  <ImageView fitHeight="128.0" fitWidth="168.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+                  <FontAwesomeIcon fx:id="userIcon" fill="WHITE" glyphName="USER" layoutX="51.0" layoutY="114.0" size="10em" />
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background: transparent; -fx-border-color: transparent;" vbarPolicy="AS_NEEDED">
+               <content>
+                  <AnchorPane prefHeight="720.0" prefWidth="1100.0">
+                     <children>
+                        <!-- CART MODAL (Overlay) -->
+                        <AnchorPane fx:id="cartModal" layoutX="0.0" layoutY="0.0" prefHeight="720.0" prefWidth="1100.0" style="-fx-background-color: rgba(0,0,0,0.7);" visible="false">
+                           <children>
+                              <VBox alignment="TOP_CENTER" layoutX="250.0" layoutY="100.0" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefWidth="560.0">
+                                       <children>
+                                          <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1e242e;" text="My Shopping Cart">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <FontAwesomeIcon fill="#ae2d3c" glyphName="SHOPPING_CART" size="2em" />
+                                       </children>
+                                    </HBox>
+                                    
+                                    <Separator prefWidth="560.0" />
+                                    
+                                    <VBox prefHeight="350.0" prefWidth="560.0" spacing="10">
+                                       <children>
+                                          <!-- Empty Cart Message -->
+                                          <VBox fx:id="emptyCartMessage" alignment="CENTER" prefHeight="300.0" prefWidth="560.0" spacing="20" visible="true">
+                                             <children>
+                                                <FontAwesomeIcon fill="#ccc" glyphName="SHOPPING_CART" size="4em" />
+                                                <Label style="-fx-font-size: 18px; -fx-text-fill: #999;" text="Your cart is empty" />
+                                                <Button fx:id="browseSnacksBtn" mnemonicParsing="false" style="-fx-background-color: #ae2d3c; -fx-text-fill: white;" text="Browse Snacks &amp; Drinks">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          
+                                          <!-- Cart Items -->
+                                          <VBox fx:id="cartItemsContainer" spacing="10" visible="false">
+                                             <children>
+                                                <ListView fx:id="cartItemsListView" prefHeight="250.0" prefWidth="560.0" style="-fx-background-color: #f9f9f9; -fx-border-color: #ddd;" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                    
+                                    <!-- Cart Summary -->
+                                    <VBox fx:id="cartSummaryBox" prefWidth="560.0" spacing="10" visible="false">
+                                       <children>
+                                          <Separator prefWidth="560.0" />
+                                          <HBox alignment="CENTER_RIGHT" prefWidth="560.0">
+                                             <children>
+                                                <Label style="-fx-font-size: 16px;" text="Subtotal:" />
+                                                <Label fx:id="cartSubtotalLabel" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #ae2d3c;" text="ETB 0.00">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <Separator prefWidth="560.0" />
+                                          <HBox alignment="CENTER_RIGHT" prefWidth="560.0">
+                                             <children>
+                                                <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Total:" />
+                                                <Label fx:id="cartTotalModalLabel" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #ae2d3c;" text="ETB 0.00">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    
+                                    <!-- Cart Actions -->
+                                    <HBox alignment="CENTER" prefWidth="560.0" spacing="20">
+                                       <children>
+                                          <Button fx:id="closeCartBtn" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #6c757d; -fx-text-fill: white;" text="Close">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button fx:id="clearCartBtn" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #dc3545; -fx-text-fill: white;" text="Clear Cart">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button fx:id="checkoutBtn" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold;" text="Checkout">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+
+                        <!-- HOME PAGE -->
+                        <AnchorPane fx:id="homePageForm" layoutX="36.0" layoutY="23.0" prefHeight="668.6666666666666" prefWidth="1099.3333333333333" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane layoutX="10.0" layoutY="10.0" prefHeight="648.0" prefWidth="1079.0" style="-fx-background: transparent; -fx-border-color: transparent;">
+                                 <content>
+                                    <VBox spacing="30" style="-fx-padding: 20;">
+                                       <children>
+                                          <!-- Hero Banner -->
+                                          <AnchorPane prefHeight="300.0" prefWidth="1039.0" style="-fx-background-color: linear-gradient(to right, #1e242e, #ae2d3c); -fx-background-radius: 10;">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="939.0" spacing="30">
+                                                   <children>
+                                                      <VBox prefWidth="600.0" spacing="15">
+                                                         <children>
+                                                            <Label style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold;" text="Experience Cinema Like Never Before" />
+                                                            <Label style="-fx-text-fill: white; -fx-font-size: 16px;" text="Book tickets for the latest blockbusters, enjoy delicious snacks, and create unforgettable memories with family and friends." wrapText="true" />
+                                                            <Button fx:id="bookNowHeroBtn" mnemonicParsing="false" style="-fx-background-color: #ffc107; -fx-text-fill: black; -fx-font-size: 16px; -fx-font-weight: bold; -fx-pref-width: 150;" text="Book Now">
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </Button>
+                                                         </children>
+                                                      </VBox>
+                                                      <ImageView fx:id="heroImageView" fitHeight="250.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 10;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+
+                                          <!-- Now Showing Movies -->
+                                          <VBox spacing="15">
+                                             <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1e242e;" text="Now Showing" />
+                                                <Button fx:id="viewAllMoviesBtn" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: #ae2d3c; -fx-font-weight: bold;" text="View All">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                             </HBox>
+                                             <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="300.0" prefWidth="1039.0" style="-fx-background: transparent;">
+                                                <content>
+                                                   <HBox fx:id="nowShowingContainer" alignment="TOP_LEFT" spacing="20">
+                                                      <padding>
+                                                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                      </padding>
+                                                   </HBox>
+                                                </content>
+                                             </ScrollPane>
+                                          </VBox>
+
+                                          <!-- Coming Soon Movies -->
+                                          <VBox spacing="15">
+                                             <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1e242e;" text="Coming Soon" />
+                                             </HBox>
+                                             <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="300.0" prefWidth="1039.0" style="-fx-background: transparent;">
+                                                <content>
+                                                   <HBox fx:id="comingSoonContainer" alignment="TOP_LEFT" spacing="20">
+                                                      <padding>
+                                                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                      </padding>
+                                                   </HBox>
+                                                </content>
+                                             </ScrollPane>
+                                          </VBox>
+
+                                          <!-- Popular Snacks -->
+                                          <VBox spacing="15">
+                                             <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1e242e;" text="Popular Snacks &amp; Drinks" />
+                                                <Button fx:id="viewAllSnacksBtn" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: #ae2d3c; -fx-font-weight: bold;" text="View All">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                             </HBox>
+                                             <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="250.0" prefWidth="1039.0" style="-fx-background: transparent;">
+                                                <content>
+                                                   <HBox fx:id="popularSnacksContainer" alignment="TOP_LEFT" spacing="20">
+                                                      <padding>
+                                                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                      </padding>
+                                                   </HBox>
+                                                </content>
+                                             </ScrollPane>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+
+                        <!-- MOVIES PAGE -->
+                        <AnchorPane fx:id="moviesPageForm" layoutX="36.0" layoutY="23.0" prefHeight="668.6666666666666" prefWidth="1099.3333333333333" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane layoutX="10.0" layoutY="10.0" prefHeight="648.0" prefWidth="1079.0" style="-fx-background: transparent; -fx-border-color: transparent;">
+                                 <content>
+                                    <VBox spacing="20" style="-fx-padding: 20;">
+                                       <children>
+                                          <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1e242e;" text="All Movies" />
+                                          
+                                          <!-- Search and Filter -->
+                                          <HBox alignment="CENTER_LEFT" spacing="15">
+                                             <TextField fx:id="movieSearchField" prefWidth="300.0" promptText="Search movies..." style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 20;" />
+                                             <ComboBox fx:id="movieCategoryFilter" prefWidth="150.0" promptText="All Categories">
+                                                <items>
+                                                   <FXCollections fx:factory="observableArrayList">
+                                                      <String fx:value="All" />
+                                                      <String fx:value="Now Showing" />
+                                                      <String fx:value="Coming Soon" />
+                                                      <String fx:value="Featured" />
+                                                   </FXCollections>
+                                                </items>
+                                             </ComboBox>
+                                             <ComboBox fx:id="movieGenreFilter" prefWidth="150.0" promptText="All Genres">
+                                                <items>
+                                                   <FXCollections fx:factory="observableArrayList">
+                                                      <String fx:value="All" />
+                                                      <String fx:value="Action" />
+                                                      <String fx:value="Comedy" />
+                                                      <String fx:value="Drama" />
+                                                      <String fx:value="Horror" />
+                                                      <String fx:value="Sci-Fi" />
+                                                      <String fx:value="Romance" />
+                                                   </FXCollections>
+                                                </items>
+                                             </ComboBox>
+                                             <Button fx:id="searchMovieBtn" mnemonicParsing="false" style="-fx-background-color: #ae2d3c; -fx-text-fill: white;" text="Search">
+                                                <cursor>
+                                                   <Cursor fx:constant="HAND" />
+                                                </cursor>
+                                             </Button>
+                                          </HBox>
+                                          
+                                          <!-- Movie Grid -->
+                                          <TilePane fx:id="allMoviesTilePane" hgap="20.0" prefColumns="4" prefHeight="500.0" prefWidth="1039.0" vgap="20.0">
+                                             <padding>
+                                                <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                             </padding>
+                                          </TilePane>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+
+                        <!-- SNACKS & DRINKS PAGE (UPDATED WITH CART FUNCTIONALITY) -->
+                        <AnchorPane fx:id="snacksDrinksForm" layoutX="36.0" layoutY="23.0" prefHeight="668.6666666666666" prefWidth="1099.3333333333333" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane layoutX="10.0" layoutY="10.0" prefHeight="648.0" prefWidth="1079.0" style="-fx-background: transparent; -fx-border-color: transparent;">
+                                 <content>
+                                    <VBox spacing="20" style="-fx-padding: 20;">
+                                       <children>
+                                          <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1e242e;" text="Snacks &amp; Drinks" />
+                                          
+                                          <!-- Filter Tabs -->
+                                          <HBox alignment="CENTER_LEFT" spacing="10">
+                                             <Button fx:id="allSnacksBtn" mnemonicParsing="false" style="-fx-background-color: #ae2d3c; -fx-text-fill: white;" text="All" />
+                                             <Button fx:id="snacksOnlyBtn" mnemonicParsing="false" style="-fx-background-color: #e9ecef; -fx-text-fill: #333;" text="Snacks" />
+                                             <Button fx:id="drinksOnlyBtn" mnemonicParsing="false" style="-fx-background-color: #e9ecef; -fx-text-fill: #333;" text="Drinks" />
+                                             <Button fx:id="combosBtn" mnemonicParsing="false" style="-fx-background-color: #e9ecef; -fx-text-fill: #333;" text="Combos" />
+                                          </HBox>
+                                          
+                                          <!-- Search -->
+                                          <HBox alignment="CENTER_LEFT" spacing="10">
+                                             <TextField fx:id="snackSearchField" prefWidth="400.0" promptText="Search snacks and drinks..." style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 20;" />
+                                             <Button fx:id="searchSnackBtn" mnemonicParsing="false" style="-fx-background-color: #ae2d3c; -fx-text-fill: white;" text="Search">
+                                                <cursor>
+                                                   <Cursor fx:constant="HAND" />
+                                                </cursor>
+                                             </Button>
+                                          </HBox>
+                                          
+                                          <!-- Items Grid -->
+                                          <TilePane fx:id="snacksDrinksTilePane" hgap="20.0" prefColumns="4" prefHeight="500.0" prefWidth="1039.0" vgap="20.0">
+                                             <padding>
+                                                <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                             </padding>
+                                          </TilePane>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+
+                        <!-- BOOK TICKETS PAGE (UPDATED) -->
+                        <AnchorPane fx:id="bookTicketsForm" layoutX="36.0" layoutY="23.0" prefHeight="668.6666666666666" prefWidth="1099.3333333333333" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane layoutX="10.0" layoutY="10.0" prefHeight="648.0" prefWidth="1079.0" style="-fx-background: transparent; -fx-border-color: transparent;">
+                                 <content>
+                                    <VBox spacing="30" style="-fx-padding: 20;">
+                                       <children>
+                                          <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1e242e;" text="Book Movie Tickets" />
+                                          
+                                          <!-- Movie Selection -->
+                                          <VBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                             <children>
+                                                <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="1. Select Movie &amp; Showtime" />
+                                                <HBox spacing="20">
+                                                   <ComboBox fx:id="bookMovieSelect" prefWidth="300.0" promptText="Select Movie" />
+                                                   <DatePicker fx:id="bookDateSelect" prefWidth="200.0" promptText="Select Date" />
+                                                   <ComboBox fx:id="bookTimeSelect" prefWidth="150.0" promptText="Select Time" />
+                                                   <Button fx:id="findShowtimesBtn" mnemonicParsing="false" style="-fx-background-color: #ae2d3c; -fx-text-fill: white;" text="Find Showtimes">
+                                                      <cursor>
+                                                         <Cursor fx:constant="HAND" />
+                                                      </cursor>
+                                                   </Button>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          
+                                          <!-- Showtimes Display -->
+                                          <VBox fx:id="showtimesContainer" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;" visible="false">
+                                             <children>
+                                                <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Available Showtimes" />
+                                                <GridPane fx:id="showtimesGrid" hgap="15" prefHeight="200.0" prefWidth="1039.0" vgap="10">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                          
+                                          <!-- Seat Selection -->
+                                          <VBox fx:id="seatSelectionContainer" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;" visible="false">
+                                             <children>
+                                                <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="2. Select Seats" />
+                                                <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #666; -fx-alignment: CENTER;" text="SCREEN" />
+                                                
+                                                <ScrollPane fx:id="seatSelectionScroll" fitToWidth="true" prefHeight="300.0" prefWidth="1039.0" style="-fx-background: transparent;">
+                                                   <content>
+                                                      <GridPane fx:id="seatSelectionGrid" alignment="CENTER" hgap="10.0" prefHeight="280.0" prefWidth="1019.0" vgap="10.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <padding>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </padding>
+                                                      </GridPane>
+                                                   </content>
+                                                </ScrollPane>
+                                                
+                                                <!-- Seat Legend -->
+                                                <HBox alignment="CENTER" spacing="30">
+                                                   <HBox alignment="CENTER_LEFT" spacing="10">
+                                                      <Circle fill="#239f1a" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+                                                      <Label text="Available" />
+                                                   </HBox>
+                                                   <HBox alignment="CENTER_LEFT" spacing="10">
+                                                      <Circle fill="DODGERBLUE" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+                                                      <Label text="Selected" />
+                                                   </HBox>
+                                                   <HBox alignment="CENTER_LEFT" spacing="10">
+                                                      <Circle fill="#a12020" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+                                                      <Label text="Booked" />
+                                                   </HBox>
+                                                   <HBox alignment="CENTER_LEFT" spacing="10">
+                                                      <Circle fill="#939698" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+                                                      <Label text="Blocked" />
+                                                   </HBox>
+                                                </HBox>
+                                                
+                                                <!-- Selected Seats Info -->
+                                                <HBox spacing="20">
+                                                   <Label fx:id="selectedSeatsLabel" style="-fx-font-size: 16px;" text="Selected Seats: None" />
+                                                   <Label fx:id="seatPriceLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Total: ETB 0.00" />
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          
+                                          <!-- Snacks Selection -->
+                                          <VBox fx:id="snacksSelectionContainer" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;" visible="false">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" spacing="10">
+                                                   <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="3. Add Snacks &amp; Drinks (Optional)" />
+                                                   <Button fx:id="viewCartFromBookingBtn" mnemonicParsing="false" style="-fx-background-color: #ffc107; -fx-text-fill: #1e242e; -fx-font-weight: bold;" text="View Cart">
+                                                      <cursor>
+                                                         <Cursor fx:constant="HAND" />
+                                                      </cursor>
+                                                   </Button>
+                                                </HBox>
+                                                <Label style="-fx-text-fill: #666;" text="Items added to your cart will be included in your booking:" />
+                                                <TilePane fx:id="snacksSelectionTile" hgap="15.0" prefColumns="4" prefHeight="250.0" prefWidth="1039.0" vgap="15.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </TilePane>
+                                                <Label fx:id="snacksTotalLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Cart Total: ETB 0.00" />
+                                             </children>
+                                          </VBox>
+                                          
+                                          <!-- Booking Summary -->
+                                          <VBox fx:id="bookingSummaryContainer" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;" visible="false">
+                                             <children>
+                                                <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="4. Review &amp; Confirm" />
+                                                <GridPane hgap="20" prefHeight="200.0" prefWidth="1039.0" vgap="10">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label style="-fx-font-weight: bold;" text="Movie:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                                      <Label fx:id="summaryMovieLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                                      
+                                                      <Label style="-fx-font-weight: bold;" text="Date &amp; Time:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                                      <Label fx:id="summaryDateTimeLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      
+                                                      <Label style="-fx-font-weight: bold;" text="Seats:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                                      <Label fx:id="summarySeatsLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      
+                                                      <Label style="-fx-font-weight: bold;" text="Snacks in Cart:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                                      <Label fx:id="summarySnacksLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      
+                                                      <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #ae2d3c;" text="Total Amount:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                                      <Label fx:id="summaryTotalLabel" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #ae2d3c;" text="ETB 0.00" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                   </children>
+                                                </GridPane>
+                                                
+                                                <Button fx:id="proceedToPaymentBtn" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 200;" text="Proceed to Payment">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+
+                        <!-- PAYMENT PAGE (UPDATED WITH OTP) -->
+                        <AnchorPane fx:id="paymentForm" layoutX="36.0" layoutY="23.0" prefHeight="668.6666666666666" prefWidth="1099.3333333333333" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="10.0" layoutY="14.0" prefHeight="634.0" prefWidth="1066.0" style="-fx-background-color: #fff; -fx-background-radius: 10;">
+                                 <effect>
+                                    <DropShadow height="7.37" radius="3.185" width="7.37" />
+                                 </effect>
+                                 <children>
+                                    <VBox layoutX="20.0" layoutY="20.0" prefHeight="594.0" prefWidth="1026.0" spacing="20.0">
+                                       <children>
+                                          <!-- Order Summary Section -->
+                                          <AnchorPane prefHeight="200.0" prefWidth="1026.0" style="-fx-background-color: #f9f9f9; -fx-border-color: #ddd; -fx-border-radius: 10; -fx-padding: 15;">
+                                             <children>
+                                                <Label layoutX="10.0" layoutY="10.0" style="-fx-text-fill: #ae2d3c;" text="ORDER SUMMARY" textFill="#ae2d3c">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <VBox layoutX="10.0" layoutY="40.0" prefWidth="1006.0" spacing="10.0">
+                                                   <children>
+                                                      <HBox spacing="20.0">
+                                                         <children>
+                                                            <Label prefWidth="150.0" style="-fx-text-fill: #666666;" text="Movie:">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="paymentMovieLabel" prefWidth="300.0" text="Movie Name" textFill="#333">
+                                                               <font>
+                                                                  <Font name="System" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox layoutX="10.0" layoutY="100.0" spacing="20.0">
+                                                         <children>
+                                                            <Label prefWidth="150.0" style="-fx-text-fill: #666666;" text="Snacks in Cart:">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="paymentSnacksLabel" prefWidth="300.0" style="-fx-text-fill: #333333;" text="No snacks in cart" textFill="#333">
+                                                               <font>
+                                                                  <Font name="System" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox spacing="20.0">
+                                                         <children>
+                                                            <Label prefWidth="150.0" style="-fx-text-fill: #666666;" text="Date &amp; Time:" textFill="#666">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="paymentDateTimeLabel" prefWidth="300.0" text="Date, Time" textFill="#333">
+                                                               <font>
+                                                                  <Font name="System" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox spacing="20.0">
+                                                         <children>
+                                                            <Label prefWidth="150.0" style="-fx-text-fill: #666666;" text="Seats:" textFill="#666">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="paymentSeatsLabel" prefWidth="300.0" text="A1, A2, A3" textFill="#333">
+                                                               <font>
+                                                                  <Font name="System" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox spacing="20.0">
+                                                         <children>
+                                                            <Label prefWidth="150.0" style="-fx-text-fill: #666666;" text="Number of Tickets:" textFill="#666">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="paymentTicketsLabel" prefWidth="300.0" text="3" textFill="#333">
+                                                               <font>
+                                                                  <Font name="System" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <Separator prefWidth="1006.0" />
+                                                      <HBox spacing="20.0">
+                                                         <children>
+                                                            <Label prefWidth="150.0" style="-fx-text-fill: #666666;" text="Tickets Subtotal:" textFill="#666">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="paymentTicketsSubtotalLabel" prefWidth="300.0" text="0.00 ETB" textFill="#333">
+                                                               <font>
+                                                                  <Font name="System" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox spacing="20.0">
+                                                         <children>
+                                                            <Label prefWidth="150.0" style="-fx-text-fill: #666666;" text="Snacks Subtotal:" textFill="#666">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="paymentSnacksSubtotalLabel" prefWidth="300.0" text="0.00 ETB" textFill="#333">
+                                                               <font>
+                                                                  <Font name="System" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox spacing="20.0">
+                                                         <children>
+                                                            <Label prefWidth="150.0" style="-fx-text-fill: #666666;" text="Service Charge:" textFill="#666">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="paymentServiceChargeLabel" prefWidth="300.0" text="10.00 ETB" textFill="#333">
+                                                               <font>
+                                                                  <Font name="System" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <Separator prefWidth="1006.0" />
+                                                      <HBox spacing="20.0">
+                                                         <children>
+                                                            <Label prefWidth="150.0" style="-fx-text-fill: #ae2d3c;" text="Total Amount:" textFill="#ae2d3c">
+                                                               <font>
+                                                                  <Font name="System Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="paymentTotalAmountLabel" style="-fx-text-fill: #ae2d3c;" text="0.00 ETB" textFill="#ae2d3c">
+                                                               <font>
+                                                                  <Font name="System Bold" size="18.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+
+                                          <!-- Payment Method Selection -->
+                                          <VBox prefWidth="1026.0" spacing="10.0" style="-fx-text-fill: #666666;">
+                                             <children>
+                                                <Label style="-fx-text-fill: #ae2d3c;" text="SELECT PAYMENT METHOD" textFill="#ae2d3c">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <HBox spacing="20.0">
+                                                   <children>
+                                                      <VBox prefWidth="500.0" spacing="15.0">
+                                                         <children>
+                                                            <!-- Telebirr Option -->
+                                                            <AnchorPane prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: #f9f9f9; -fx-border-color: #ddd; -fx-border-radius: 10; -fx-padding: 15;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                                                     <children>
+                                                                        <RadioButton fx:id="telebirrRadio" mnemonicParsing="false" selected="true" style="-fx-text-fill: #121212;" text="Telebirr" textFill="#121212">
+                                                                           <toggleGroup>
+                                                                              <ToggleGroup fx:id="paymentMethodGroup" />
+                                                                           </toggleGroup>
+                                                                           <font>
+                                                                              <Font name="System Bold" size="14.0" />
+                                                                           </font>
+                                                                        </RadioButton>
+                                                                        <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@images/telebirr_logo.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label layoutX="35.0" layoutY="40.0" style="-fx-text-fill: #666666;" text="Secure payment via Telebirr mobile money" textFill="#666">
+                                                                     <font>
+                                                                        <Font name="System" size="12.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </AnchorPane>
+
+                                                            <!-- CBE Birr Option -->
+                                                            <AnchorPane prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: #f9f9f9; -fx-border-color: #ddd; -fx-border-radius: 10; -fx-padding: 15;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                                                     <children>
+                                                                        <RadioButton fx:id="cbeRadio" mnemonicParsing="false" style="-fx-text-fill: #121212;" text="CBE Birr" toggleGroup="$paymentMethodGroup">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="14.0" />
+                                                                           </font>
+                                                                        </RadioButton>
+                                                                        <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@images/cbe_logo.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label layoutX="35.0" layoutY="40.0" style="-fx-text-fill: #666666;" text="Secure payment via CBE Birr" textFill="#666">
+                                                                     <font>
+                                                                        <Font name="System" size="12.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </VBox>
+
+                                                      <!-- Payment Details Form -->
+                                                      <VBox fx:id="paymentDetailsForm" prefWidth="500.0" spacing="15.0" style="-fx-background-color: #f9f9f9; -fx-border-color: #ddd; -fx-border-radius: 10; -fx-padding: 15;">
+                                                         <children>
+                                                            <Label style="-fx-text-fill: #121212;" text="PAYMENT DETAILS" textFill="#575757">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            
+                                                            <!-- Phone Number Input -->
+                                                            <VBox spacing="10.0">
+                                                               <children>
+                                                                  <Label style="-fx-text-fill: #666666;" text="Phone Number:" textFill="#666">
+                                                                     <font>
+                                                                        <Font name="System" size="12.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <TextField fx:id="paymentPhoneField" prefHeight="35.0" prefWidth="470.0" promptText="Enter your phone number" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 5;" />
+                                                               </children>
+                                                            </VBox>
+                                                            
+                                                            <!-- OTP Section (Initially hidden) -->
+                                                            <VBox fx:id="otpSection" spacing="10.0" visible="false">
+                                                               <children>
+                                                                  <Label style="-fx-text-fill: #666666;" text="Enter OTP:" textFill="#666">
+                                                                     <font>
+                                                                        <Font name="System" size="12.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <TextField fx:id="otpField" prefHeight="35.0" prefWidth="200.0" promptText="Enter 6-digit OTP" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 5;" />
+                                                                        <Button fx:id="resendOtpBtn" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #6c757d; -fx-text-fill: white;" text="Resend">
+                                                                           <font>
+                                                                              <Font name="System" size="12.0" />
+                                                                           </font>
+                                                                        </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Label fx:id="otpTimerLabel" style="-fx-text-fill: #dc3545;" text="OTP valid for: 2:00" textFill="#dc3545">
+                                                                           <font>
+                                                                              <Font name="System" size="11.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Button fx:id="verifyOtpBtn" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Verify OTP">
+                                                                           <font>
+                                                                              <Font name="System" size="12.0" />
+                                                                           </font>
+                                                                        </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                            
+                                                            <!-- Request OTP Button -->
+                                                            <Button fx:id="requestOtpBtn" mnemonicParsing="false" prefHeight="35.0" prefWidth="470.0" style="-fx-background-color: #ae2d3c; -fx-text-fill: white;" text="Send OTP">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Button>
+                                                            
+                                                            <!-- Payment Instructions -->
+                                                            <VBox spacing="5.0">
+                                                               <children>
+                                                                  <Label style="-fx-text-fill: #666666;" text="Payment Instructions:" textFill="#666">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="12.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <TextArea editable="false" prefHeight="80.0" prefWidth="470.0" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 5;" wrapText="true">
+                                                                     <text>
+                                                                        1. Enter your phone number registered with the payment service
+                                                                        2. Click "Send OTP" to receive a verification code
+                                                                        3. Enter the 6-digit OTP to verify your payment
+                                                                        4. Your payment will be processed securely
+                                                                     </text>
+                                                                     <font>
+                                                                        <Font name="System" size="11.0" />
+                                                                     </font>
+                                                                  </TextArea>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+
+                                          <!-- Terms and Conditions -->
+                                          <VBox prefWidth="1026.0" spacing="10.0">
+                                             <children>
+                                                <CheckBox fx:id="termsCheckBox" mnemonicParsing="false" style="-fx-text-fill: #000000;" text="I agree to the Terms and Conditions">
+                                                   <font>
+                                                      <Font name="System" size="12.0" />
+                                                   </font>
+                                                </CheckBox>
+                                                <TextArea editable="false" prefHeight="60.0" prefWidth="1026.0" style="-fx-background-color: #f9f9f9; -fx-border-color: #ddd; -fx-border-radius: 5;" wrapText="true">
+                                                   <text>
+                                                      By proceeding with this payment, you agree to our terms of service. Tickets are non-refundable but can be rescheduled up to 2 hours before the showtime. Late arrivals may not be admitted once the movie has started.
+                                                   </text>
+                                                   <font>
+                                                      <Font name="System" size="11.0" />
+                                                   </font>
+                                                </TextArea>
+                                             </children>
+                                          </VBox>
+
+                                          <!-- Payment Action Buttons -->
+                                          <HBox alignment="CENTER" spacing="20.0">
+                                             <children>
+                                                <Button fx:id="backToBookingBtn" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-background-radius: 5;" text="Back to Booking">
+                                                   <font>
+                                                      <Font name="System" size="14.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="makePaymentBtn" disable="true" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-background-radius: 5;" text="Make Payment">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+
+                                    <!-- Payment Processing Overlay -->
+                                    <AnchorPane fx:id="paymentProcessingPane" layoutX="0.0" layoutY="0.0" prefHeight="634.0" prefWidth="1066.0" style="-fx-background-color: rgba(0,0,0,0.7);" visible="false">
+                                       <children>
+                                          <VBox alignment="CENTER" layoutX="383.0" layoutY="217.0" prefHeight="200.0" prefWidth="300.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
+                                             <children>
+                                                <ProgressIndicator fx:id="paymentProgressIndicator" prefHeight="50.0" prefWidth="50.0" />
+                                                <Label fx:id="paymentStatusLabel" text="Processing Payment..." textFill="#333">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="paymentMessageLabel" alignment="CENTER" text="Please wait while we process your payment." textFill="#666" wrapText="true">
+                                                   <font>
+                                                      <Font name="System" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+
+                                    <!-- Payment Success Overlay -->
+                                    <AnchorPane fx:id="paymentSuccessPane" layoutX="0.0" layoutY="0.0" prefHeight="634.0" prefWidth="1066.0" style="-fx-background-color: rgba(0,0,0,0.7);" visible="false">
+                                       <children>
+                                          <VBox alignment="CENTER" layoutX="333.0" layoutY="167.0" prefHeight="300.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
+                                             <children>
+                                                <FontAwesomeIcon fill="#28a745" glyphName="CHECK_CIRCLE" size="4em" />
+                                                <Label text="Payment Successful!" textFill="#28a745">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="successMessageLabel" alignment="CENTER" text="Your payment has been processed successfully." textFill="#666" wrapText="true">
+                                                   <font>
+                                                      <Font name="System" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="bookingIdLabel" text="Booking ID: #123456" textFill="#333">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="paymentAmountLabel" text="Amount: 0.00 ETB" textFill="#333">
+                                                   <font>
+                                                      <Font name="System" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="You will receive a confirmation email shortly." textFill="#666">
+                                                   <font>
+                                                      <Font name="System" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <HBox spacing="20.0">
+                                                   <children>
+                                                      <Button fx:id="viewTicketBtn" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-background-radius: 5;" text="View Ticket">
+                                                         <font>
+                                                            <Font name="System" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="doneBtn" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-background-radius: 5;" text="Done">
+                                                         <font>
+                                                            <Font name="System" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+
+                                    <!-- Payment Failed Overlay -->
+                                    <AnchorPane fx:id="paymentFailedPane" layoutX="0.0" layoutY="0.0" prefHeight="634.0" prefWidth="1066.0" style="-fx-background-color: rgba(0,0,0,0.7);" visible="false">
+                                       <children>
+                                          <VBox alignment="CENTER" layoutX="333.0" layoutY="167.0" prefHeight="300.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
+                                             <children>
+                                                <FontAwesomeIcon fill="#dc3545" glyphName="TIMES_CIRCLE" size="4em" />
+                                                <Label text="Payment Failed" textFill="#dc3545">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="errorMessageLabel" alignment="CENTER" text="There was an error processing your payment." textFill="#666" wrapText="true">
+                                                   <font>
+                                                      <Font name="System" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Please try again or use a different payment method." textFill="#666">
+                                                   <font>
+                                                      <Font name="System" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <HBox spacing="20.0">
+                                                   <children>
+                                                      <Button fx:id="tryAgainBtn" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-background-radius: 5;" text="Try Again">
+                                                         <font>
+                                                            <Font name="System" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="cancelPaymentBtn" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-background-radius: 5;" text="Cancel">
+                                                         <font>
+                                                            <Font name="System" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+
+                        <!-- MY BOOKINGS PAGE -->
+                        <AnchorPane fx:id="myBookingsForm" layoutX="36.0" layoutY="23.0" prefHeight="668.6666666666666" prefWidth="1099.3333333333333" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane layoutX="10.0" layoutY="10.0" prefHeight="648.0" prefWidth="1079.0" style="-fx-background: transparent; -fx-border-color: transparent;">
+                                 <content>
+                                    <VBox spacing="20" style="-fx-padding: 20;">
+                                       <children>
+                                          <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1e242e;" text="My Bookings" />
+                                          
+                                          <!-- Filter Options -->
+                                          <HBox alignment="CENTER_LEFT" spacing="15">
+                                             <ComboBox fx:id="bookingStatusFilterUser" prefWidth="200.0" promptText="All Bookings">
+                                                <items>
+                                                   <FXCollections fx:factory="observableArrayList">
+                                                      <String fx:value="All" />
+                                                      <String fx:value="Upcoming" />
+                                                      <String fx:value="Completed" />
+                                                      <String fx:value="Cancelled" />
+                                                   </FXCollections>
+                                                </items>
+                                             </ComboBox>
+                                             <DatePicker fx:id="bookingDateFilter" prefWidth="200.0" promptText="Filter by Date" />
+                                             <Button fx:id="filterBookingsUserBtn" mnemonicParsing="false" style="-fx-background-color: #ae2d3c; -fx-text-fill: white;" text="Filter">
+                                                <cursor>
+                                                   <Cursor fx:constant="HAND" />
+                                                </cursor>
+                                             </Button>
+                                          </HBox>
+                                          
+                                          <!-- Bookings Table -->
+                                          <TableView fx:id="myBookingsTable" prefHeight="500.0" prefWidth="1039.0">
+                                            <columns>
+                                              <TableColumn fx:id="myBookingIdColumn" prefWidth="100.0" text="Booking ID" />
+                                              <TableColumn fx:id="myBookingMovieColumn" prefWidth="200.0" text="Movie" />
+                                                <TableColumn fx:id="myBookingDateColumn" prefWidth="120.0" text="Date" />
+                                                <TableColumn fx:id="myBookingTimeColumn" prefWidth="100.0" text="Time" />
+                                                <TableColumn fx:id="myBookingSeatsColumn" prefWidth="150.0" text="Seats" />
+                                                <TableColumn fx:id="myBookingAmountColumn" prefWidth="120.0" text="Amount" />
+                                                <TableColumn fx:id="myBookingStatusColumn" prefWidth="120.0" text="Status" />
+                                                <TableColumn fx:id="myBookingActionColumn" prefWidth="150.0" text="Actions" />
+                                            </columns>
+                                          </TableView>
+                                          
+                                          <!-- Action Buttons -->
+                                          <HBox spacing="15">
+                                             <Button fx:id="viewBookingDetailsBtn" mnemonicParsing="false" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="View Details">
+                                                <cursor>
+                                                   <Cursor fx:constant="HAND" />
+                                                </cursor>
+                                             </Button>
+                                             <Button fx:id="cancelBookingUserBtn" mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white;" text="Cancel Booking">
+                                                <cursor>
+                                                   <Cursor fx:constant="HAND" />
+                                                </cursor>
+                                             </Button>
+                                             <Button fx:id="deleteBookingUserBtn" mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-pref-width: 100;" text="Delete" />
+                                             <Button fx:id="printTicketBtn" mnemonicParsing="false" style="-fx-background-color: #17a2b8; -fx-text-fill: white;" text="Print Ticket">
+                                                <graphic>
+                                                   <FontAwesomeIcon fill="WHITE" glyphName="PRINT" size="1.2em" />
+                                                </graphic>
+                                                <cursor>
+                                                   <Cursor fx:constant="HAND" />
+                                                </cursor>
+                                             </Button>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+
+                        <!-- ABOUT US PAGE -->
+                        <AnchorPane fx:id="aboutUsForm" layoutX="36.0" layoutY="23.0" prefHeight="668.6666666666666" prefWidth="1099.3333333333333" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane layoutX="10.0" layoutY="10.0" prefHeight="648.0" prefWidth="1079.0" style="-fx-background: transparent; -fx-border-color: transparent;">
+                                 <content>
+                                    <VBox spacing="30" style="-fx-padding: 20;">
+                                       <children>
+                                          <!-- Cinema Banner -->
+                                          <AnchorPane prefHeight="300.0" prefWidth="1039.0" style="-fx-background-color: #1e242e; -fx-background-radius: 10;">
+                                             <children>
+                                                <ImageView fx:id="cinemaBannerImage" fitHeight="300.0" fitWidth="1039.0" opacity="0.8" pickOnBounds="true" preserveRatio="true" />
+                                                <Label fx:id="cinemaNameLabel" alignment="CENTER" layoutX="50.0" layoutY="100.0" prefHeight="60.0" prefWidth="939.0" style="-fx-text-fill: white; -fx-font-size: 42px; -fx-font-weight: bold;" text="Cinema Name" />
+                                             </children>
+                                          </AnchorPane>
+                                          
+                                          <!-- Cinema Description -->
+                                          <VBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
+                                             <children>
+                                                <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1e242e;" text="About Our Cinema" />
+                                                <Label fx:id="cinemaDescriptionLabel" style="-fx-font-size: 16px; -fx-text-fill: #666;" text="Cinema description will appear here." wrapText="true" />
+                                             </children>
+                                          </VBox>
+                                          
+                                          <!-- Cinema Info -->
+                                          <GridPane hgap="30" prefHeight="200.0" prefWidth="1039.0" vgap="20.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <VBox spacing="10.0">
+                                                   <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Contact Information" />
+                                                   <HBox alignment="CENTER_LEFT" spacing="10">
+                                                      <FontAwesomeIcon glyphName="PHONE" size="1.5em" />
+                                                      <Label fx:id="cinemaPhoneLabel" text="Phone: +251 911 123 456" />
+                                                   </HBox>
+                                                   <HBox alignment="CENTER_LEFT" spacing="10">
+                                                      <FontAwesomeIcon glyphName="ENVELOPE" size="1.5em" />
+                                                      <Label fx:id="cinemaEmailLabel" text="Email: info@cinema.com" />
+                                                   </HBox>
+                                                   <HBox alignment="CENTER_LEFT" spacing="10">
+                                                      <FontAwesomeIcon glyphName="MAP_MARKER" size="1.5em" />
+                                                      <Label fx:id="cinemaAddressLabel" text="Address: 123 Cinema Street, City" wrapText="true" />
+                                                   </HBox>
+                                                </VBox>
+                                                
+                                                <VBox prefHeight="128.0" prefWidth="505.0" spacing="10.0">
+                                                   <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Working Hours" />
+                                                   <Label fx:id="cinemaHoursLabel" text="Monday - Sunday: 9:00 AM - 11:00 PM" />
+                                                   <Label style="-fx-font-weight: bold;" text="Open 7 days a week" />
+                                                </VBox>
+                                             </children>
+                                          </GridPane>
+                                          
+                                          <!-- Facilities -->
+                                          <VBox spacing="20">
+                                             <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1e242e;" text="Our Facilities" />
+                                             <TilePane hgap="20.0" prefColumns="4" prefHeight="200.0" prefWidth="1039.0" vgap="20.0">
+                                                <children>
+                                                   <VBox alignment="CENTER" spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                                      <FontAwesomeIcon glyphName="FOLDER" size="3em" />
+                                                      <Label style="-fx-font-weight: bold; -fx-text-fill: #000000;" text="Comfortable Seating" />
+                                                   </VBox>
+                                                   <VBox alignment="CENTER" spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                                      <FontAwesomeIcon glyphName="VOLUME_UP" size="3em" />
+                                                      <Label style="-fx-font-weight: bold; -fx-text-fill: #000000;" text="Dolby Sound" />
+                                                   </VBox>
+                                                   <VBox alignment="CENTER" spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                                      <FontAwesomeIcon glyphName="FILM" size="3em" />
+                                                      <Label style="-fx-font-weight: bold; -fx-text-fill: #000000;" text="3D Experience" />
+                                                   </VBox>
+                                                   <VBox alignment="CENTER" spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                                      <FontAwesomeIcon glyphName="CAR" size="3em" />
+                                                      <Label style="-fx-font-weight: bold; -fx-text-fill: #000000;" text="Ample Parking" />
+                                                   </VBox>
+                                                </children>
+                                             </TilePane>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+
+                        <!-- HELP & SUPPORT PAGE -->
+                        <AnchorPane fx:id="helpForm" layoutX="36.0" layoutY="23.0" prefHeight="668.6666666666666" prefWidth="1099.3333333333333" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane layoutX="10.0" layoutY="10.0" prefHeight="648.0" prefWidth="1079.0" style="-fx-background: transparent; -fx-border-color: transparent;">
+                                 <content>
+                                    <VBox spacing="30" style="-fx-padding: 20;">
+                                       <children>
+                                          <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1e242e;" text="Help &amp; Support" />
+                                          
+                                          <!-- FAQs Section -->
+                                          <VBox spacing="15">
+                                             <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Frequently Asked Questions" />
+                                             <VBox fx:id="faqContainer" spacing="10" />
+                                          </VBox>
+                                          
+                                          <!-- Contact Information -->
+                                          <VBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
+                                             <children>
+                                                <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Contact Us" />
+                                                <GridPane hgap="20" vgap="15">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label style="-fx-font-weight: bold;" text="Customer Service:" />
+                                                      <Label fx:id="helpPhoneLabel" text="+251 911 123 456" />
+                                                      
+                                                      <Label style="-fx-font-weight: bold;" text="Email Support:" />
+                                                      <Label fx:id="helpEmailLabel" text="support@cinema.com" />
+                                                      
+                                                      <Label style="-fx-font-weight: bold;" text="Business Hours:" />
+                                                      <Label fx:id="helpHoursLabel" text="9:00 AM - 11:00 PM (7 days a week)" />
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                          
+                                          <!-- Support Instructions -->
+                                          <VBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
+                                             <children>
+                                                <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Need Help?" />
+                                                <Label fx:id="helpInstructionsLabel" text="Support instructions will appear here." wrapText="true" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+
+                        <!-- MY PROFILE PAGE -->
+                        <AnchorPane fx:id="profileForm" layoutX="36.0" layoutY="23.0" prefHeight="668.6666666666666" prefWidth="1099.3333333333333" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane layoutX="10.0" layoutY="10.0" prefHeight="648.0" prefWidth="1079.0" style="-fx-background: transparent; -fx-border-color: transparent;">
+                                 <content>
+                                    <VBox spacing="30" style="-fx-padding: 20;">
+                                       <children>
+                                          <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1e242e;" text="My Profile" />
+                                          
+                                          <HBox alignment="TOP_LEFT" spacing="50">
+                                             <!-- Profile Picture -->
+                                             <VBox prefWidth="300.0" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
+                                                <children>
+                                                   <ImageView fx:id="profileImageView" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 75; -fx-border-color: #ddd;" />
+                                                   <Button fx:id="changeProfilePicBtn" mnemonicParsing="false" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="Change Photo">
+                                                      <cursor>
+                                                         <Cursor fx:constant="HAND" />
+                                                      </cursor>
+                                                   </Button>
+                                                </children>
+                                             </VBox>
+                                             
+                                             <!-- Profile Form -->
+                                             <VBox prefWidth="700.0" spacing="20" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
+                                                <children>
+                                                   <GridPane hgap="20" vgap="15">
+                                                     <columnConstraints>
+                                                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                     </columnConstraints>
+                                                     <rowConstraints>
+                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                     </rowConstraints>
+                                                      <children>
+                                                         <Label text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                                         <TextField fx:id="profileNameField" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                                         
+                                                         <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                                         <TextField fx:id="profileEmailField" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                         
+                                                         <Label text="Phone Number:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                                         <TextField fx:id="profilePhoneField" promptText="Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                         
+                                                         <Label text="Change Password:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                                         <PasswordField fx:id="profilePasswordField" promptText="profilePassword" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                         
+                                                         <Label text="Confirm Password:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                                         <PasswordField fx:id="profileConfirmPasswordField" promptText="ConfirmPassword" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                      </children>
+                                                   </GridPane>
+                                                   
+                                                   <HBox spacing="15">
+                                                      <Button fx:id="saveProfileBtn" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Save Changes">
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Button fx:id="cancelProfileBtn" mnemonicParsing="false" style="-fx-background-color: #6c757d; -fx-text-fill: white;" text="Cancel">
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                   </HBox>
+                                                </children>
+                                             </VBox>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

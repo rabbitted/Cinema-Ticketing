@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/application/Admin_DashboardController.java=UTF-8
+encoding//src/application/Admin_LoginController.java=UTF-8
+encoding//src/application/Forgot_PasswordController.java=UTF-8
+encoding//src/application/LoginController.java=UTF-8
+encoding//src/application/Main.java=UTF-8
+encoding//src/application/NewAccController.java=UTF-8
+encoding//src/application/Reset_PasswordController.java=UTF-8
+encoding//src/application/UserDashboardController.java=UTF-8
+encoding//src/application/WelcomeController.java=UTF-8
+encoding//src/util/DatabaseConnection.java=UTF-8
+encoding//src/util/SessionManager.java=UTF-8
+encoding/<project>=windows-1252

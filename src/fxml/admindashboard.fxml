@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Admin_DashboardController">
+   <children>
+      <BorderPane layoutX="43.0" layoutY="39.0" prefHeight="720.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="51.0" prefWidth="1300.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="573.0" layoutY="-100.0" prefHeight="39.0" prefWidth="1300.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="closeBtn" layoutX="1239.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="55.0" style="-fx-background-color: TRANSPARENT;">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="CLOSE" size="1.2em">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </FontAwesomeIcon>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="minimizeBtn" layoutX="1171.0" layoutY="2.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="36.0" style="-fx-background-color: TRANSPARENT;">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="MINUS" size="1.2em">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </FontAwesomeIcon>
+                           </graphic>
+                        </Button>
+                        <Separator layoutX="198.0" layoutY="18.0" prefHeight="24.0" prefWidth="1102.0" />
+                        <Button fx:id="maximizeBtn" layoutX="1207.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="36.0" style="-fx-background-color: TRANSPARENT;">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="SQUARE" size="1.2em">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </FontAwesomeIcon>
+                           </graphic>
+                        </Button>
+                        <Label layoutX="14.0" layoutY="5.0" prefHeight="38.0" prefWidth="170.0" text="ELIANA CINEMA" textFill="#723a3a">
+                           <font>
+                              <Font name="Tahoma Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="761.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to top right, #1e242e, #ae2d3c);" BorderPane.alignment="CENTER">
+               <children>
+                  <FontAwesomeIcon fx:id="userIcon" fill="WHITE" glyphName="USER" layoutX="53.0" layoutY="124.0" size="10em" />
+                  <Label layoutX="60.0" layoutY="136.0" text="WELCOME" textFill="WHITE">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="usernameLabel" alignment="CENTER" layoutX="74.0" layoutY="156.0" text="Admin" textFill="WHITE" />
+                  <Button fx:id="homeBtn" alignment="CENTER" layoutX="2.0" layoutY="195.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Dashboard">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="moviesBtn" alignment="CENTER" layoutX="2.0" layoutY="235.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Movies">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PLAY" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="snacksDrinksBtn" alignment="CENTER" layoutX="2.0" layoutY="272.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Snacks &amp; Drinks">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="COFFEE" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="showtimesBtn" alignment="CENTER" layoutX="1.0" layoutY="310.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Showtimes">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CLOCK_ALT" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bookingsBtn" alignment="CENTER" layoutX="3.0" layoutY="348.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Bookings">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="TICKET" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="customersBtn" alignment="CENTER" layoutX="3.0" layoutY="386.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Customers">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USERS" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="seatsBtn" alignment="CENTER" layoutX="3.0" layoutY="424.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Seat Management">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="FOLDER" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="contentBtn" alignment="CENTER" layoutX="3.0" layoutY="462.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: TRANSPARENT; -fx-text-fill: #fff;" text="Content">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="EDIT" size="1.5em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="logoutBtn" layoutX="77.0" layoutY="503.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="45.0" style="-fx-background-color: TRANSPARENT;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <!-- ADMIN DASHBOARD -->
+                  <ScrollPane fx:id="dashboardScrollPane" fitToWidth="true" prefHeight="669.0" prefWidth="1100.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane fx:id="dashboardForm" prefHeight="700.0" prefWidth="1099.3333333333333">
+                           <children>
+                              <VBox layoutX="1.3333333333333333" layoutY="59.0" prefHeight="750.0" prefWidth="1098.0" spacing="20" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <children>
+                                    <HBox prefHeight="150.0" spacing="20">
+                                       <children>
+                                          <VBox prefWidth="250.0" spacing="10" style="-fx-background-color: linear-gradient(to right, #0072ff, #00c6ff); -fx-background-radius: 10; -fx-padding: 20;">
+                                             <children>
+                                                <Label style="-fx-text-fill: white; -fx-font-size: 18px;" text="Total Sales" />
+                                                <Label fx:id="totalSalesLabel" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" text="ETB 250,000" />
+                                                <FontAwesomeIcon fill="WHITE" glyphName="DOLLAR" size="3em" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefWidth="250.0" spacing="10" style="-fx-background-color: linear-gradient(to right, #ff416c, #ff4b2b); -fx-background-radius: 10; -fx-padding: 20;">
+                                             <children>
+                                                <Label style="-fx-text-fill: white; -fx-font-size: 18px;" text="Tickets Sold" />
+                                                <Label fx:id="ticketsSoldLabel" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" text="1,234" />
+                                                <FontAwesomeIcon fill="WHITE" glyphName="TICKET" size="3em" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefWidth="250.0" spacing="10" style="-fx-background-color: linear-gradient(to right, #772d90, #a42fb8); -fx-background-radius: 10; -fx-padding: 20;">
+                                             <children>
+                                                <Label style="-fx-text-fill: white; -fx-font-size: 18px;" text="Active Movies" />
+                                                <Label fx:id="activeMoviesLabel" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" text="15" />
+                                                <FontAwesomeIcon fill="WHITE" glyphName="FILM" size="3em" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefWidth="250.0" spacing="10" style="-fx-background-color: linear-gradient(to right, #9d2249, #cc1c5a); -fx-background-radius: 10; -fx-padding: 20;">
+                                             <children>
+                                                <Label style="-fx-text-fill: white; -fx-font-size: 18px;" text="Total Customers" />
+                                                <Label fx:id="totalCustomersLabel" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" text="3,456" />
+                                                <FontAwesomeIcon fill="WHITE" glyphName="USERS" size="3em" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="400.0" spacing="20">
+                                       <children>
+                                          <VBox prefWidth="700.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                             <children>
+                                                <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Sales Overview" />
+                                                <BarChart fx:id="salesChart" prefHeight="350.0" prefWidth="660.0">
+                                                  <xAxis>
+                                                    <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                                                  </xAxis>
+                                                  <yAxis>
+                                                    <NumberAxis fx:id="yAxis" side="LEFT" />
+                                                  </yAxis>
+                                                </BarChart>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefWidth="350.0" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                             <children>
+                                                <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Recent Bookings" />
+                                                <TableView fx:id="recentBookingsTable" prefHeight="300.0" prefWidth="310.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="bookingIdColumn" prefWidth="80.0" text="ID" />
+                                                    <TableColumn fx:id="bookingMovieColumn" prefWidth="120.0" text="Movie" />
+                                                      <TableColumn fx:id="bookingTimeColumn" prefWidth="80.0" text="Time" />
+                                                  </columns>
+                                                </TableView>
+                                                <Button fx:id="viewAllBookingsBtn" mnemonicParsing="false" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="View All Bookings" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+
+                  <!-- MOVIE MANAGEMENT -->
+                  <ScrollPane fx:id="moviesScrollPane" fitToWidth="true" prefHeight="669.0" prefWidth="1100.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane fx:id="moviesForm" prefHeight="750.0" prefWidth="1099.3333333333333">
+                           <children>
+                              <HBox layoutX="20.0" layoutY="20.0" prefHeight="750.0" prefWidth="1059.0" spacing="20">
+                                 <children>
+                                    <VBox prefWidth="350.0" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                       <children>
+                                          <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Add/Edit Movie" />
+                                          
+                                          <AnchorPane prefHeight="250.0" prefWidth="310.0" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd; -fx-border-radius: 5;">
+                                             <children>
+                                                <ImageView fx:id="movieImageView" fitHeight="250.0" fitWidth="310.0" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </AnchorPane>
+                                          
+                                          <Button fx:id="importMovieImageBtn" mnemonicParsing="false" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="Import Image" />
+                                          
+                                          <VBox spacing="10">
+                                             <TextField fx:id="movieTitleField" promptText="Movie Title" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                             <TextField fx:id="movieGenreField" promptText="Genre (comma separated)" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                             <TextField fx:id="movieDurationField" promptText="Duration (e.g., 2h 30m)" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                             <TextField fx:id="movieDirectorField" promptText="Director" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                             <TextField fx:id="movieCastField" promptText="Cast (comma separated)" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                             <TextArea fx:id="movieDescriptionArea" prefHeight="80.0" promptText="Description" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" wrapText="true" />
+                                             <ComboBox fx:id="movieCategoryBox" promptText="Select Category">
+                                                <items>
+                                                   <FXCollections fx:factory="observableArrayList">
+                                                      <String fx:value="Now Showing" />
+                                                      <String fx:value="Coming Soon" />
+                                                      <String fx:value="Featured" />
+                                                   </FXCollections>
+                                                </items>
+                                             </ComboBox>
+                                             <TextField fx:id="moviePriceField" promptText="Price (ETB)" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                             <TextField fx:id="movieRatingField" promptText="Rating (e.g., PG-13)" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                             <TextField fx:id="movieTrailerField" promptText="Trailer YouTube URL" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                             <DatePicker fx:id="movieReleaseDate" promptText="Release Date" />
+                                          </VBox>
+                                          
+                                          <HBox spacing="10">
+                                             <Button fx:id="addMovieBtn" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-pref-width: 100;" text="Add" />
+                                             <Button fx:id="updateMovieBtn" mnemonicParsing="false" style="-fx-background-color: #ffc107; -fx-text-fill: white; -fx-pref-width: 100;" text="Update" />
+                                             <Button fx:id="deleteMovieBtn" mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-pref-width: 100;" text="Delete" />
+                                          </HBox>
+                                          <Button fx:id="clearMovieBtn" mnemonicParsing="false" style="-fx-background-color: #6c757d; -fx-text-fill: white;" text="Clear Form" />
+                                       </children>
+                                    </VBox>
+                                    
+                                    <VBox prefWidth="689.0" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="10">
+                                             <children>
+                                                <TextField fx:id="searchMovieField" prefWidth="250.0" promptText="Search movies..." style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                <FontAwesomeIcon glyphName="SEARCH" size="1.5em" />
+                                             </children>
+                                          </HBox>
+                                          
+                                          <TableView fx:id="movieTableView" prefHeight="550.0" prefWidth="649.0">
+                                            <columns>
+                                              <TableColumn fx:id="movieIdColumn" prefWidth="50.0" text="ID" />
+                                              <TableColumn fx:id="movieTitleColumn" prefWidth="150.0" text="Title" />
+                                                <TableColumn fx:id="movieCategoryColumn" prefWidth="100.0" text="Category" />
+                                                <TableColumn fx:id="movieGenreColumn" prefWidth="120.0" text="Genre" />
+                                                <TableColumn fx:id="movieDurationColumn" prefWidth="80.0" text="Duration" />
+                                                <TableColumn fx:id="moviePriceColumn" prefWidth="80.0" text="Price" />
+                                                <TableColumn fx:id="movieStatusColumn" prefWidth="80.0" text="Status" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+
+                  <!-- SNACKS & DRINKS MANAGEMENT -->
+                  <ScrollPane fx:id="snacksScrollPane" fitToWidth="true" prefHeight="669.0" prefWidth="1100.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane fx:id="snacksForm" prefHeight="750.0" prefWidth="1099.3333333333333">
+                           <children>
+                              <HBox layoutX="20.0" layoutY="20.0" prefHeight="750.0" prefWidth="1059.0" spacing="20">
+                                 <children>
+                                    <VBox prefWidth="350.0" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                       <children>
+                                          <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Add/Edit Snack/Drink" />
+                                          
+                                          <AnchorPane prefHeight="200.0" prefWidth="310.0" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd; -fx-border-radius: 5;">
+                                             <children>
+                                                <ImageView fx:id="snackImageView" fitHeight="200.0" fitWidth="310.0" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </AnchorPane>
+                                          
+                                          <Button fx:id="importSnackImageBtn" mnemonicParsing="false" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="Import Image" />
+                                          
+                                          <VBox spacing="10">
+                                             <ComboBox fx:id="snackTypeBox" promptText="Select Type">
+                                                <items>
+                                                   <FXCollections fx:factory="observableArrayList">
+                                                      <String fx:value="Snack" />
+                                                      <String fx:value="Drink" />
+                                                      <String fx:value="Combo" />
+                                                   </FXCollections>
+                                                </items>
+                                             </ComboBox>
+                                             <TextField fx:id="snackNameField" promptText="Item Name" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                             <TextField fx:id="snackSizeField" promptText="Size (e.g., Small, Medium, Large)" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                             <TextField fx:id="snackPriceField" promptText="Price (ETB)" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                             <TextArea fx:id="snackDescriptionArea" prefHeight="60.0" promptText="Description" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" wrapText="true" />
+                                             <TextField fx:id="snackCaloriesField" promptText="Calories (optional)" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                             <CheckBox fx:id="snackAvailableCheck" text="Available" />
+                                          </VBox>
+                                          
+                                          <HBox spacing="10">
+                                             <Button fx:id="addSnackBtn" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-pref-width: 100;" text="Add" />
+                                             <Button fx:id="updateSnackBtn" mnemonicParsing="false" style="-fx-background-color: #ffc107; -fx-text-fill: white; -fx-pref-width: 100;" text="Update" />
+                                             <Button fx:id="deleteSnackBtn" mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-pref-width: 100;" text="Delete" />
+                                          </HBox>
+                                          <Button fx:id="clearSnackBtn" mnemonicParsing="false" style="-fx-background-color: #6c757d; -fx-text-fill: white;" text="Clear Form" />
+                                       </children>
+                                    </VBox>
+                                    
+                                    <VBox prefWidth="689.0" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="10">
+                                             <children>
+                                                <TextField fx:id="searchSnackField" prefWidth="250.0" promptText="Search snacks/drinks..." style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                <FontAwesomeIcon glyphName="SEARCH" size="1.5em" />
+                                             </children>
+                                          </HBox>
+                                          
+                                          <TableView fx:id="snackTableView" prefHeight="550.0" prefWidth="649.0">
+                                            <columns>
+                                              <TableColumn fx:id="snackIdColumn" prefWidth="50.0" text="ID" />
+                                              <TableColumn fx:id="snackNameColumn" prefWidth="150.0" text="Name" />
+                                                <TableColumn fx:id="snackTypeColumn" prefWidth="80.0" text="Type" />
+                                                <TableColumn fx:id="snackSizeColumn" prefWidth="80.0" text="Size" />
+                                                <TableColumn fx:id="snackPriceColumn" prefWidth="80.0" text="Price" />
+                                                <TableColumn fx:id="snackAvailableColumn" prefWidth="80.0" text="Available" />
+                                                <TableColumn fx:id="snackCaloriesColumn" prefWidth="80.0" text="Calories" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+
+                  <!-- SHOWTIMES MANAGEMENT -->
+                  <ScrollPane fx:id="showtimesScrollPane" fitToWidth="true" prefHeight="669.0" prefWidth="1100.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane fx:id="showtimesForm" prefHeight="750.0" prefWidth="1099.3333333333333">
+                           <children>
+                              <VBox layoutX="20.0" layoutY="20.0" prefHeight="750.0" prefWidth="1059.0" spacing="20">
+                                 <children>
+                                    <HBox prefHeight="200.0" spacing="20">
+                                       <children>
+                                          <VBox prefWidth="350.0" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                             <children>
+                                                <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Add Showtime" />
+                                                
+                                                <VBox spacing="10">
+                                                   <ComboBox fx:id="showtimeMovieBox" promptText="Select Movie" />
+                                                   <DatePicker fx:id="showtimeDate" promptText="Show Date" />
+                                                   <TextField fx:id="showtimeTimeField" promptText="Time (e.g., 14:30)" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                   <TextField fx:id="showtimeHallField" promptText="Hall Number" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                   <TextField fx:id="showtimePriceField" promptText="Price (ETB)" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                   <TextArea fx:id="showtimeNotesArea" prefHeight="60.0" promptText="Notes (optional)" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" wrapText="true" />
+                                                </VBox>
+                                                
+                                                <HBox spacing="10">
+                                                   <Button fx:id="addShowtimeBtn" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-pref-width: 100;" text="Add" />
+                                                   <Button fx:id="updateShowtimeBtn" mnemonicParsing="false" style="-fx-background-color: #ffc107; -fx-text-fill: white; -fx-pref-width: 100;" text="Update" />
+                                                   <Button fx:id="deleteShowtimeBtn" mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-pref-width: 100;" text="Delete" />
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          
+                                          <VBox prefWidth="689.0" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" spacing="10">
+                                                   <children>
+                                                      <DatePicker fx:id="showtimeFilterDate" promptText="Filter by Date" />
+                                                      <ComboBox fx:id="showtimeFilterMovie" promptText="Filter by Movie" />
+                                                      <Button fx:id="filterShowtimesBtn" mnemonicParsing="false" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="Filter" />
+                                                   </children>
+                                                </HBox>
+                                                
+                                                <TableView fx:id="showtimeTableView" prefHeight="450.0" prefWidth="649.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="showtimeIdColumn" prefWidth="50.0" text="ID" />
+                                                    <TableColumn fx:id="showtimeMovieColumn" prefWidth="150.0" text="Movie" />
+                                                      <TableColumn fx:id="showtimeDateColumn" prefWidth="100.0" text="Date" />
+                                                      <TableColumn fx:id="showtimeTimeColumn" prefWidth="80.0" text="Time" />
+                                                      <TableColumn fx:id="showtimeHallColumn" prefWidth="80.0" text="Hall" />
+                                                      <TableColumn fx:id="showtimePriceColumn" prefWidth="80.0" text="Price" />
+                                                      <TableColumn fx:id="showtimeSeatsColumn" prefWidth="80.0" text="Seats Left" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+
+                  <!-- BOOKINGS MANAGEMENT -->
+                  <!-- BOOKINGS MANAGEMENT -->
+<ScrollPane fx:id="bookingsScrollPane" fitToWidth="true" prefHeight="669.0" prefWidth="1100.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+   <content>
+      <AnchorPane fx:id="bookingsForm" prefHeight="750.0" prefWidth="1099.3333333333333">
+         <children>
+            <VBox layoutX="20.0" layoutY="20.0" prefHeight="750.0" prefWidth="1059.0" spacing="20">
+               <children>
+                  <HBox spacing="20">
+                     <children>
+                        <VBox prefWidth="1059.0" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="10">
+                                 <children>
+                                    <DatePicker fx:id="bookingFilterDate" promptText="Filter by Date" />
+                                    <TextField fx:id="bookingFilterId" promptText="Booking ID" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                    <ComboBox fx:id="bookingStatusFilter" promptText="Status">
+                                       <items>
+                                          <FXCollections fx:factory="observableArrayList">
+                                             <String fx:value="All" />
+                                             <String fx:value="Confirmed" />
+                                             <String fx:value="Pending" />
+                                             <String fx:value="Cancelled" />
+                                             <String fx:value="Completed" />
+                                          </FXCollections>
+                                       </items>
+                                    </ComboBox>
+                                    <Button fx:id="filterBookingsBtn" mnemonicParsing="false" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="Filter" />
+                                    <Button fx:id="exportBookingsBtn" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Export CSV">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="DOWNLOAD" size="1.2em" />
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              
+                              <TableView fx:id="bookingTableView" prefHeight="500.0" prefWidth="1019.0">
+                                <columns>
+                                  <TableColumn fx:id="bookingIdColumn2" prefWidth="80.0" text="Booking ID" />
+                                  <TableColumn fx:id="bookingCustomerColumn" prefWidth="150.0" text="Customer" />
+                                    <TableColumn fx:id="bookingMovieColumn2" prefWidth="150.0" text="Movie" />
+                                    <TableColumn fx:id="bookingDateColumn" prefWidth="100.0" text="Date" />
+                                    <TableColumn fx:id="bookingTimeColumn2" prefWidth="80.0" text="Time" />
+                                    <TableColumn fx:id="bookingSeatsColumn" prefWidth="100.0" text="Seats" />
+                                    <TableColumn fx:id="bookingTotalColumn" prefWidth="100.0" text="Total" />
+                                    <TableColumn fx:id="bookingStatusColumn" prefWidth="100.0" text="Status" />
+                                    <TableColumn fx:id="bookingPaymentColumn" prefWidth="120.0" text="Payment Method" />
+                                </columns>
+                              </TableView>
+                              
+                              <HBox spacing="10">
+                                 <Button fx:id="confirmBookingBtn" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Confirm Booking" />
+                                 <Button fx:id="cancelBookingBtn" mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white;" text="Cancel Booking" />
+                                 <Button fx:id="viewBookingDetailsBtn" mnemonicParsing="false" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="View Details" />
+                                 <Button fx:id="sendBookingSMSBtn" mnemonicParsing="false" style="-fx-background-color: #17a2b8; -fx-text-fill: white;" text="Resend SMS">
+                                    <graphic>
+                                       <FontAwesomeIcon fill="WHITE" glyphName="ENVELOPE" size="1.2em" />
+                                    </graphic>
+                                 </Button>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>
+
+                  <!-- CUSTOMER MANAGEMENT -->
+                  <ScrollPane fx:id="customersScrollPane" fitToWidth="true" prefHeight="669.0" prefWidth="1100.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane fx:id="customersForm" prefHeight="750.0" prefWidth="1099.3333333333333">
+                           <children>
+                              <VBox layoutX="20.0" layoutY="20.0" prefHeight="750.0" prefWidth="1059.0" spacing="20">
+                                 <children>
+                                    <HBox spacing="20">
+                                       <VBox prefWidth="1059.0" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                          <children>
+                                             <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <children>
+                                                   <TextField fx:id="customerSearchField" prefWidth="250.0" promptText="Search customers..." style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                   <FontAwesomeIcon glyphName="SEARCH" size="1.5em" />
+                                                </children>
+                                             </HBox>
+                                             
+                                             <TableView fx:id="customerTableView" prefHeight="500.0" prefWidth="1019.0">
+                                               <columns>
+                                                 <TableColumn fx:id="customerIdColumn" prefWidth="50.0" text="ID" />
+                                                 <TableColumn fx:id="customerNameColumn" prefWidth="150.0" text="Name" />
+                                                   <TableColumn fx:id="customerEmailColumn" prefWidth="200.0" text="Email" />
+                                                   <TableColumn fx:id="customerPhoneColumn" prefWidth="120.0" text="Phone" />
+                                                   <TableColumn fx:id="customerJoinDateColumn" prefWidth="100.0" text="Join Date" />
+                                                   <TableColumn fx:id="customerBookingsColumn" prefWidth="80.0" text="Bookings" />
+                                                   <TableColumn fx:id="customerTotalSpentColumn" prefWidth="100.0" text="Total Spent" />
+                                                   <TableColumn fx:id="customerStatusColumn" prefWidth="80.0" text="Status" />
+                                               </columns>
+                                             </TableView>
+                                             
+                                             <HBox spacing="10">
+                                                <Button fx:id="viewCustomerBtn" mnemonicParsing="false" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="View Profile" />
+                                                <Button fx:id="editCustomerBtn" mnemonicParsing="false" style="-fx-background-color: #ffc107; -fx-text-fill: white;" text="Edit" />
+                                                <Button fx:id="deactivateCustomerBtn" mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white;" text="Deactivate" />
+                                                <Button fx:id="exportCustomersBtn" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Export CSV">
+                                                   <graphic>
+                                                      <FontAwesomeIcon fill="WHITE" glyphName="DOWNLOAD" size="1.2em" />
+                                                   </graphic>
+                                                </Button>
+                                             </HBox>
+                                          </children>
+                                       </VBox>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+
+                  <!-- SEAT MANAGEMENT -->
+                  <ScrollPane fx:id="seatsScrollPane" fitToWidth="true" prefHeight="669.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane fx:id="seatsForm" prefHeight="800.0" prefWidth="1099.3333333333333">
+                           <children>
+                              <VBox layoutX="20.0" layoutY="20.0" prefHeight="800.0" prefWidth="1059.0" spacing="20">
+                                 <children>
+                                    <HBox prefHeight="100.0" spacing="20">
+                                       <children>
+                                          <VBox prefWidth="250.0" spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                             <children>
+                                                <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Seat Configuration" />
+                                                <TextField fx:id="seatRowsField" promptText="Number of Rows" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                <TextField fx:id="seatColumnsField" promptText="Number of Columns" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                <TextField fx:id="seatPriceField" promptText="Base Price (ETB)" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                <ComboBox fx:id="seatHallBox" promptText="Select Hall">
+                                                   <items>
+                                                      <FXCollections fx:factory="observableArrayList">
+                                                         <String fx:value="Hall 1" />
+                                                         <String fx:value="Hall 2" />
+                                                         <String fx:value="Hall 3" />
+                                                         <String fx:value="VIP Hall" />
+                                                      </FXCollections>
+                                                   </items>
+                                                </ComboBox>
+                                                <Button fx:id="generateSeatsBtn" mnemonicParsing="false" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="Generate Seats" />
+                                             </children>
+                                          </VBox>
+                                          
+                                          <VBox prefWidth="789.0" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" spacing="10">
+                                                   <children>
+                                                      <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #666;" text="SCREEN" />
+                                                   </children>
+                                                </HBox>
+                                                
+                                                <ScrollPane fx:id="seatScrollPane" fitToWidth="true" prefHeight="400.0" prefWidth="749.0">
+                                                   <content>
+                                                      <GridPane fx:id="seatGridPane" alignment="CENTER" hgap="10.0" prefHeight="380.0" prefWidth="729.0" vgap="10.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <padding>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </padding>
+                                                      </GridPane>
+                                                   </content>
+                                                </ScrollPane>
+                                                
+                                                <HBox spacing="10">
+                                                   <Button fx:id="saveSeatsBtn" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Save Layout" />
+                                                   <Button fx:id="updateHall" mnemonicParsing="false" style="-fx-background-color: #ffc107; -fx-text-fill: white; -fx-pref-width: 100;" text="Update" />
+                                                   <Button fx:id="blockSeatBtn" mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white;" text="Block Seat" />
+                                                   <Button fx:id="unblockSeatBtn" mnemonicParsing="false" style="-fx-background-color: #ffc107; -fx-text-fill: white;" text="Unblock Seat" />
+                                                   <Button fx:id="resetSeatsBtn" mnemonicParsing="false" style="-fx-background-color: #6c757d; -fx-text-fill: white;" text="Reset All" />
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 <TableView fx:id="seatTableView" prefHeight="200.0" prefWidth="1039.0">
+    <columns>
+        <TableColumn fx:id="seatIdColumn" prefWidth="50" text="ID" />
+        <TableColumn fx:id="seatLabelColumn" prefWidth="155.33332061767578" text="Seat Label" />
+        <TableColumn fx:id="seatRowColumn" prefWidth="113.99995422363281" text="Row" />
+        <TableColumn fx:id="seatNumberColumn" prefWidth="152.6666259765625" text="Number" />
+        <TableColumn fx:id="seatTypeColumn" prefWidth="202.00003051757812" text="Type" />
+        <TableColumn fx:id="seatStatusColumn" prefWidth="202.66668701171875" text="Status" />
+        <TableColumn fx:id="seatPriceColumn" prefWidth="186.00006103515625" text="Price" />
+    </columns>
+</TableView>
+                                    <HBox prefHeight="50.0" prefWidth="200.0" spacing="15.0">
+                                       <children>
+                                          <ComboBox fx:id="seatHallBox2" promptText="Select Hall">
+                                             <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                   <String fx:value="Hall 1" />
+                                                   <String fx:value="Hall 2" />
+                                                   <String fx:value="Hall 3" />
+                                                   <String fx:value="VIP Hall" />
+                                                </FXCollections>
+                                             </items>
+                                          </ComboBox>
+                                          <Button fx:id="loadSeat1" layoutX="258.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-pref-width: 100;" text="Load" />
+                                          <Button fx:id="deleteSeat" mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-pref-width: 100;" text="Delete" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets left="20.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+
+                  <!-- CONTENT MANAGEMENT (About Us, Help, etc.) -->
+                  <ScrollPane fx:id="contentScrollPane" fitToWidth="true" prefHeight="669.0" prefWidth="1100.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane fx:id="contentForm" prefHeight="800.0" prefWidth="1099.3333333333333">
+                           <children>
+                              <VBox layoutX="20.0" layoutY="20.0" prefHeight="800.0" prefWidth="1059.0" spacing="20">
+                                 <children>
+                                    <TabPane prefHeight="750.0" prefWidth="1039.0" tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab text="About Us">
+                                          <content>
+                                            <ScrollPane fitToWidth="true" prefHeight="700.0" prefWidth="1039.0">
+                                               <content>
+                                                  <VBox prefHeight="700.0" prefWidth="1019.0" spacing="15" style="-fx-padding: 20;">
+                                                     <children>
+                                                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="About Us Content" />
+                                                        
+                                                        <AnchorPane prefHeight="200.0" prefWidth="999.0" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd; -fx-border-radius: 5;">
+                                                           <children>
+                                                              <ImageView fx:id="aboutUsImageView" fitHeight="200.0" fitWidth="999.0" pickOnBounds="true" preserveRatio="true" />
+                                                           </children>
+                                                        </AnchorPane>
+                                                        
+                                                        <Button fx:id="importAboutUsImageBtn" mnemonicParsing="false" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="Change Banner Image" />
+                                                        
+                                                        <VBox spacing="10">
+                                                           <TextField fx:id="cinemaNameField" promptText="Cinema Name" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                           <TextArea fx:id="cinemaDescriptionArea" prefHeight="100.0" promptText="Description" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" wrapText="true" />
+                                                           <TextField fx:id="cinemaAddressField" promptText="Address" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                           <TextField fx:id="cinemaPhoneField" promptText="Phone Number" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                           <TextField fx:id="cinemaEmailField" promptText="Email" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                           <TextField fx:id="cinemaHoursField" promptText="Working Hours" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                        </VBox>
+                                                        
+                                                        <Button fx:id="saveAboutUsBtn" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Save Changes" />
+                                                     </children>
+                                                  </VBox>
+                                               </content>
+                                            </ScrollPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab text="FAQs">
+                                          <content>
+                                            <ScrollPane fitToWidth="true" prefHeight="700.0" prefWidth="1039.0">
+                                               <content>
+                                                  <VBox prefHeight="700.0" prefWidth="1019.0" spacing="15" style="-fx-padding: 20;">
+                                                     <children>
+                                                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Frequently Asked Questions" />
+                                                        
+                                                        <HBox spacing="10">
+                                                           <TextField fx:id="faqQuestionField" prefWidth="400.0" promptText="New Question" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                           <TextArea fx:id="faqAnswerArea" prefHeight="60.0" prefWidth="400.0" promptText="Answer" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" wrapText="true" />
+                                                           <Button fx:id="addFaqBtn" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Add FAQ" />
+                                                        </HBox>
+                                                        
+                                                        <TableView fx:id="faqTableView" prefHeight="400.0" prefWidth="999.0">
+                                                          <columns>
+                                                            <TableColumn fx:id="faqIdColumn" prefWidth="50.0" text="ID" />
+                                                            <TableColumn fx:id="faqQuestionColumn" prefWidth="400.0" text="Question" />
+                                                              <TableColumn fx:id="faqAnswerColumn" prefWidth="400.0" text="Answer" />
+                                                              <TableColumn fx:id="faqActionColumn" prefWidth="100.0" text="Actions" />
+                                                          </columns>
+                                                        </TableView>
+                                                     </children>
+                                                  </VBox>
+                                               </content>
+                                            </ScrollPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab text="Help &amp; Support">
+                                          <content>
+                                            <ScrollPane fitToWidth="true" prefHeight="700.0" prefWidth="1039.0">
+                                               <content>
+                                                  <VBox prefHeight="700.0" prefWidth="1019.0" spacing="15" style="-fx-padding: 20;">
+                                                     <children>
+                                                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Help &amp; Support Content" />
+                                                        
+                                                        <VBox spacing="10">
+                                                           <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Customer Service Information" />
+                                                           <TextField fx:id="helpPhoneField" promptText="Customer Service Phone" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                           <TextField fx:id="helpEmailField" promptText="Support Email" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" />
+                                                           <TextArea fx:id="helpInstructionsArea" prefHeight="100.0" promptText="Support Instructions" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd;" wrapText="true" />
+                                                        </VBox>
+                                                        
+                                                        <Button fx:id="saveHelpBtn" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Save Help Content" />
+                                                     </children>
+                                                  </VBox>
+                                               </content>
+                                            </ScrollPane>
+                                          </content>
+                                        </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
